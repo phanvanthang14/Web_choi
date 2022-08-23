@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/button.css">
     <style>
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 * {
@@ -1072,7 +1073,6 @@ body {
         Turning pages<br>with css
       </h1>
       <div class="credit">
-        * Images loaded randomly from Picsum.photos
       </div>
       <div class="book">
         <div class="gap"></div>
@@ -1101,6 +1101,13 @@ body {
         </div>
       </div>
     </div>
+    <a onclick="play()" href="#" class="animated-button1">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Bấm vào đây
+    </a>
     <audio id="myAudio">
       <source src="./audio/DiVangCuocTinh.mp3" type="audio/mpeg">
     </audio>
@@ -1108,9 +1115,9 @@ body {
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery.min.js"></script>
     <script>
-      $( document ).ready(function() {
-        var x = document.getElementById("myAudio").play();
-      });
+      function play(){
+        document.getElementById("myAudio").play()
+      }
     </script>
 </body>
 </html>
