@@ -1101,5 +1101,16 @@ body {
         </div>
       </div>
     </div>
+    <audio id="myAudio">
+      <source src="./audio/DiVangCuocTinh.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+      $( document ).ready(function() {
+        var x = document.getElementById("myAudio").play();
+      });
+    </script>
 </body>
 </html>
