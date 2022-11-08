@@ -1,1122 +1,543 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Như Quỳnh ❤️️ 06-09</title>
-    <link rel="stylesheet" href="./css/button.css">
-    <style>
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-* {
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Như Quỳnh </title>
+<meta name="description" content="Đu trend tiktok">
+<meta name="keywords" content="Tim tim">
+<meta name="author" content="JunXamLop">
+<link rel="icon" type="image/x-icon" href="/logo/small.png">
+<style>
+        html,
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
 
-body {
-  font-family: "Indie Flower", cursive;
-  background-color: #eee;
-  color: #555;
-  text-align: center;
-  padding: 4em 0;
-}
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
 
-.imgLoader {
-  position: fixed;
-  -webkit-animation: preLoad 1s steps(1);
-          animation: preLoad 1s steps(1);
-  width: 1px;
-  height: 1px;
-}
-@-webkit-keyframes preLoad {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-  }
-  10% {
-    background-image: url("./image/IMG_0257.JPG");
-  }
-  20% {
-    background-image: url("./image/IMG_0287.JPG");
-  }
-  30% {
-    background-image: url("./image/IMG_1221.jpg");
-  }
-  40% {
-    background-image: url("./image/IMG_2397.JPG");
-  }
-  100% {
-    display: none;
-  }
-}
-@keyframes preLoad {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-  }
-  10% {
-    background-image: url("./image/IMG_0257.JPG");
-  }
-  20% {
-    background-image: url("./image/IMG_0287.JPG");
-  }
-  30% {
-    background-image: url("./image/IMG_1221.jpg");
-  }
-  40% {
-    background-image: url("./image/IMG_2397.JPG");
-  }
-  100% {
-    display: none;
-  }
-}
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
 
-.container {
-  position: relative;
-  width: 420px;
-  border: #fff solid 2px;
-  border-radius: 4px;
-  height: 420px;
-}
+        img {
+            width: 200px;
+            border-radius: 25px;
+        }
 
-.title {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  font-size: 2em;
-  font-weight: normal;
-  line-height: 1;
-}
+        #snowflakeContainer {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
 
-.credit {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: 0.9em;
-  text-align: left;
-}
+        .snowflake {
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 24px;
+            position: fixed;
+            color: #ebebeb;
+            user-select: none;
+            z-index: 1000;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
 
-.book {
-  position: relative;
-  perspective: 500px;
-  transform: scale(1.2);
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
-}
+        .snowflake:hover {
+            cursor: default
+        }
 
-.page {
-  width: 210px;
-  height: 300px;
-  position: absolute;
-  top: 0px;
-  right: 50%;
-  transform-origin: 100% 100%;
-  border-color : transparent;
-  border: solid 2px;
-  background-size: 420px 300px;
-  background-position: center;
-  transform-style: preserve-3d;
-}
-.page:nth-child(1) {
-  transform: rotateX(60deg) rotateY(3deg);
-}
-.page:nth-child(2) {
-  transform: rotateX(60deg) rotateY(4.5deg);
-}
-.page:nth-child(3) {
-  transform: rotateX(60deg) rotateY(6deg);
-  -webkit-animation: nextPage 25s infinite -24s steps(1);
-          animation: nextPage 25s infinite -24s steps(1);
-  background-size: 420px 300px;
-  background-position: -2px -2px;
-}
-.page:nth-child(4) {
-  transform: rotateX(60deg) rotateY(177deg);
-}
-.page:nth-child(5) {
-  transform: rotateX(60deg) rotateY(175.5deg);
-}
-.page:nth-child(6) {
-  transform: rotateX(60deg) rotateY(174deg);
-  overflow: hidden;
-}
-.page:nth-child(6)::after {
-  content: "";
-  width: 210px;
-  height: 300px;
-  position: absolute;
-  top: 0px;
-  right: 0%;
-  transform-origin: center;
-  transform: rotateY(180deg);
-  -webkit-animation: nextPage 25s -20s infinite steps(1);
-          animation: nextPage 25s -20s infinite steps(1);
-  background-size: 420px 300px;
-  background-position: 100% -2px;
-}
-@-webkit-keyframes nextPage {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-  }
-}
-@keyframes nextPage {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-  }
-}
+        * {
+            box-sizing: border-box
+        }
 
-.gap {
-  width: 10px;
-  height: 300px;
-  background: none;
-  transform: rotateX(60deg);
-  transform-origin: bottom;
-  position: absolute;
-  top: 0px;
-  left: calc(50% - 5px);
-}
-.gap::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  background-color: #555;
-  width: 10px;
-  height: 5px;
-  border-radius: 50%;
-}
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
 
-.pages, .flips {
-  transform-style: preserve-3d;
-}
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
 
-.flip {
-  width: 32px;
-  height: 300px;
-  position: absolute;
-  top: 0px;
-  transform-origin: 100% 100%;
-  right: 100%;
-  border: solid;
-  border-color : transparent;
-  border-width: 2px 0px;
-  perspective: 4200px;
-  perspective-origin: center;
-  transform-style: preserve-3d;
-  background-size: 420px 300px;
-}
-.flip::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0%;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  background-size: 420px 300px;
-}
-.flip.flip1 {
-  right: 50%;
-  -webkit-animation: flip1 5s infinite ease-in-out;
-          animation: flip1 5s infinite ease-in-out;
-  border-width: 2px 2px 2px 0;
-}
-.flip.flip1::after {
-  -webkit-animation: nextFlip1 25s -20s infinite steps(1);
-          animation: nextFlip1 25s -20s infinite steps(1);
-}
-.flip:not(.flip1) {
-  right: calc(100% - 2px);
-  top: -2px;
-  transform-origin: right;
-  -webkit-animation: flip2 5s ease-in-out infinite;
-          animation: flip2 5s ease-in-out infinite;
-}
-.flip.flip2::after {
-  -webkit-animation: nextFlip2 25s -20s infinite steps(1);
-          animation: nextFlip2 25s -20s infinite steps(1);
-}
-.flip.flip3::after {
-  -webkit-animation: nextFlip3 25s -20s infinite steps(1);
-          animation: nextFlip3 25s -20s infinite steps(1);
-}
-.flip.flip4::after {
-  -webkit-animation: nextFlip4 25s -20s infinite steps(1);
-          animation: nextFlip4 25s -20s infinite steps(1);
-}
-.flip.flip5::after {
-  -webkit-animation: nextFlip5 25s -20s infinite steps(1);
-          animation: nextFlip5 25s -20s infinite steps(1);
-}
-.flip.flip6::after {
-  -webkit-animation: nextFlip6 25s -20s infinite steps(1);
-          animation: nextFlip6 25s -20s infinite steps(1);
-}
-.flip.flip7::after {
-  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
-          animation: nextFlip7 25s -20s infinite steps(1);
-}
-.flip.flip7 {
-  width: 30px;
-  border-width: 2px 0px 2px 2px;
-}
-.flip.flip7::after {
-  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
-          animation: nextFlip7 25s -20s infinite steps(1);
-}
-@-webkit-keyframes flip1 {
-  0%, 20% {
-    transform: rotateX(60deg) rotateY(6deg);
-  }
-  80%, 100% {
-    transform: rotateX(60deg) rotateY(174deg);
-  }
-}
-@keyframes flip1 {
-  0%, 20% {
-    transform: rotateX(60deg) rotateY(6deg);
-  }
-  80%, 100% {
-    transform: rotateX(60deg) rotateY(174deg);
-  }
-}
-@-webkit-keyframes flip2 {
-  0%, 20% {
-    transform: rotateY(0deg) translateY(0px);
-  }
-  50% {
-    transform: rotateY(-15deg) translateY(0px);
-  }
-}
-@keyframes flip2 {
-  0%, 20% {
-    transform: rotateY(0deg) translateY(0px);
-  }
-  50% {
-    transform: rotateY(-15deg) translateY(0px);
-  }
-}
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
 
-@-webkit-keyframes nextFlip1 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  10% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  30% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  50% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  70% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  90% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-}
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
 
-@keyframes nextFlip1 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  10% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  30% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  50% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  70% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -178px -2px;
-    transform: rotateY(0deg);
-  }
-  90% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -210px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip2 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  10.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  30.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  50.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  70.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  90.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip2 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  10.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  30.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  50.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  70.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -148px -2px;
-    transform: rotateY(0deg);
-  }
-  90.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -238px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip3 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  11% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  31% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  51% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  71% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  91% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip3 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  11% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  31% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  51% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  71% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -118px -2px;
-    transform: rotateY(0deg);
-  }
-  91% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -268px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip4 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  11.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  31.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  51.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  71.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  91.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip4 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  11.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  31.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  51.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  71.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -88px -2px;
-    transform: rotateY(0deg);
-  }
-  91.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -298px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip5 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  12% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  32% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  52% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  72% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  92% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip5 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  12% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  32% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  52% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  72% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -58px -2px;
-    transform: rotateY(0deg);
-  }
-  92% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -328px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip6 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  12.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  32.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  52.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  72.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  92.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip6 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  12.5% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  32.5% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  52.5% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  72.5% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -28px -2px;
-    transform: rotateY(0deg);
-  }
-  92.5% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -358px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@-webkit-keyframes nextFlip7 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  13% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  33% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  53% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  73% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  93% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-}
-@keyframes nextFlip7 {
-  0% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  13% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  20% {
-    background-image: url("./image/IMG_0257.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  33% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  40% {
-    background-image: url("./image/IMG_0287.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  53% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  60% {
-    background-image: url("./image/IMG_1221.jpg");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  73% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-  80% {
-    background-image: url("./image/IMG_2397.JPG");
-    background-position: -2px -2px;
-    transform: rotateY(0deg);
-  }
-  93% {
-    background-image: url("./image/IMG_0023.JPG");
-    background-position: -388px -2px;
-    transform: rotateY(180deg);
-  }
-}
-.twitterLink {
-  position: fixed;
-  bottom: 0.5em;
-  right: 0.5em;
-}
-.twitterLink img {
-  width: 2em;
-  filter: grayscale(100%);
-  transition: filter 0.25s;
-}
-.twitterLink img:hover {
-  filter: grayscale(0%);
-}
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+		html,body{
+		  height:100%
+		}
+
+		.bg_heart {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden
+		 }
+
+		.heart {
+			position: absolute;
+			top: -50%;
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-m-transform: rotate(-45deg);
+			transform: rotate(-45deg)
+		 }
+
+		.heart:before {
+			position: absolute;
+			top: -50%;
+			left: 0;
+			display: block;
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: inherit;
+			border-radius: 100%;
+		}
+
+		.heart:after {
+			position: absolute;
+			top: 0;
+			right: -50%;
+			display: block;
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: inherit;
+			border-radius: 100%;
+		}
+
+		@-webkit-keyframes love {
+		  0%{top:110%}
+		}
+		@-moz-keyframes love {
+		  0%{top:110%}
+		}
+		@-ms-keyframes love {
+		  0%{top:110%}
+		}
+		@keyframes love {
+		  0%{top:110%}
+		}
+		input[type="file"] {
+			display: none;
+		}
+		.custom-file-upload {
+			display: inline-block;
+			padding: 6px 12px;
+			cursor: pointer;
+			color: white;
+		}
+		.custom-file-upload:hover{
+			background: red;
+		}
     </style>
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script></head>
+
 <body>
-    <div class="imgLoader"></div>
+<div class="bg_heart"><div class="heart" style="width:24px;height:24px;left:108%;background:rgba(255,82,132,1);-webkit-animation:love 14s ease;-moz-animation:love 14s ease;-ms-animation:love 14s ease;animation:love 14s ease"></div><div class="heart" style="width:34px;height:34px;left:133%;background:rgba(255,92,142,1);-webkit-animation:love 14s ease;-moz-animation:love 14s ease;-ms-animation:love 14s ease;animation:love 14s ease"></div><div class="heart" style="width:54px;height:54px;left:91%;background:rgba(255,92,142,1);-webkit-animation:love 13s ease;-moz-animation:love 13s ease;-ms-animation:love 13s ease;animation:love 13s ease"></div><div class="heart" style="width:28px;height:28px;left:43%;background:rgba(255,76,101,1);-webkit-animation:love 9s ease;-moz-animation:love 9s ease;-ms-animation:love 9s ease;animation:love 9s ease"></div><div class="heart" style="width:18px;height:18px;left:63%;background:rgba(255,76,126,1);-webkit-animation:love 14s ease;-moz-animation:love 14s ease;-ms-animation:love 14s ease;animation:love 14s ease"></div><div class="heart" style="width:2px;height:2px;left:51%;background:rgba(255,80,130,1);-webkit-animation:love 11s ease;-moz-animation:love 11s ease;-ms-animation:love 11s ease;animation:love 11s ease"></div><div class="heart" style="width:50px;height:50px;left:90%;background:rgba(255,98,123,1);-webkit-animation:love 7s ease;-moz-animation:love 7s ease;-ms-animation:love 7s ease;animation:love 7s ease"></div><div class="heart" style="width:40px;height:40px;left:112%;background:rgba(255,98,148,1);-webkit-animation:love 12s ease;-moz-animation:love 12s ease;-ms-animation:love 12s ease;animation:love 12s ease"></div><div class="heart" style="width:50px;height:50px;left:60%;background:rgba(255,80,105,1);-webkit-animation:love 9s ease;-moz-animation:love 9s ease;-ms-animation:love 9s ease;animation:love 9s ease"></div><div class="heart" style="width:40px;height:40px;left:82%;background:rgba(255,80,130,1);-webkit-animation:love 14s ease;-moz-animation:love 14s ease;-ms-animation:love 14s ease;animation:love 14s ease"></div><div class="heart" style="width:67px;height:67px;left:15%;background:rgba(255,75,100,1);-webkit-animation:love 7s ease;-moz-animation:love 7s ease;-ms-animation:love 7s ease;animation:love 7s ease"></div><div class="heart" style="width:57px;height:57px;left:27%;background:rgba(255,75,125,1);-webkit-animation:love 12s ease;-moz-animation:love 12s ease;-ms-animation:love 12s ease;animation:love 12s ease"></div><div class="heart" style="width:37px;height:37px;left:20%;background:rgba(255,81,106,1);-webkit-animation:love 8s ease;-moz-animation:love 8s ease;-ms-animation:love 8s ease;animation:love 8s ease"></div><div class="heart" style="width:27px;height:27px;left:45%;background:rgba(255,81,131,1);-webkit-animation:love 13s ease;-moz-animation:love 13s ease;-ms-animation:love 13s ease;animation:love 13s ease"></div><div class="heart" style="width:71px;height:71px;left:59%;background:rgba(255,76,101,1);-webkit-animation:love 7s ease;-moz-animation:love 7s ease;-ms-animation:love 7s ease;animation:love 7s ease"></div><div class="heart" style="width:61px;height:61px;left:78%;background:rgba(255,76,126,1);-webkit-animation:love 12s ease;-moz-animation:love 12s ease;-ms-animation:love 12s ease;animation:love 12s ease"></div><div class="heart" style="width:29px;height:29px;left:89%;background:rgba(255,79,104,1);-webkit-animation:love 7s ease;-moz-animation:love 7s ease;-ms-animation:love 7s ease;animation:love 7s ease"></div><div class="heart" style="width:19px;height:19px;left:108%;background:rgba(255,79,129,1);-webkit-animation:love 12s ease;-moz-animation:love 12s ease;-ms-animation:love 12s ease;animation:love 12s ease"></div></div>
+<canvas id="pinkboard" width="1353" height="961"></canvas>
+<div class="center">
+<div class="slideshow-container">
+<div class="mySlides fade">
+<img id="showImg" src="" border="0" height="200">
+</div>
+</div>
+</div>
+<script type="text/javascript">
+		var slideIndex = 0;
+		var slides = [];
+		$("input[name=file1]").change(function() {
+			slides = [];
+			for (var i = 0; i < $(this).get(0).files.length; ++i) {
+				slides.push($(this).get(0).files[i]);
+			}
+			showSlides();
+		});
+        /*
+       * Settings
+       */
+        showSlides();
+		function readURL(input) {
+			if (input) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$('#showImg').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input);
+			}
+		}
+        function showSlides() {
+			if(slides.length > 0){
+				$('.mySlides').show();
+				if (slideIndex >= slides.length) {slideIndex = 0}
+				readURL(slides[slideIndex]);
+				slideIndex++;
+				setTimeout(showSlides, 3000); // Change image every 2 seconds
+			}
+        }
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
-    <div class="container">
-      <h1 class="title">
-        Chúc mừng sinh nhật<br>❤️️06-09❤️️
-      </h1>
-      <div class="credit">
-      </div>
-      <div class="book">
-        <div class="pages">
-          <div class="page"></div>
-          <div class="page"></div>
-          <div class="page"></div>
-          <div class="page"></div>
-          <div class="page"></div>
-          <div class="page"></div>
-        </div>
-        <div class="flips">
-          <div class="flip flip1">
-            <div class="flip flip2">
-              <div class="flip flip3">
-                <div class="flip flip4">
-                  <div class="flip flip5">
-                    <div class="flip flip6">
-                      <div class="flip flip7"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a onclick="play()" class="animated-button1">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      📢🎶🎶🎶
-    </a>
-    <audio id="myAudio">
-      <source src="./audio/HappyBirthday.mp3" type="audio/mpeg">
-    </audio>
+        var settings = {
+            particles: {
+                length: 500, // maximum amount of particles
+                duration: 2, // particle duration in sec
+                velocity: 100, // particle velocity in pixels/sec
+                effect: -0.75, // play with this for a nice effect
+                size: 30, // particle size in pixels
+            },
+        };
 
-    <script src="./js/jquery.js"></script>
-    <script src="./js/jquery.min.js"></script>
-    <script>
-      function play(){
-        document.getElementById("myAudio").play()
-      }
+        /*
+         * RequestAnimationFrame polyfill by Erik Möller
+         */
+        (function () {
+            var b = 0; var c = ["ms", "moz", "webkit", "o"]; for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
+                window.requestAnimationFrame = windo
+                w[c[a] + "RequestAnimationFrame"]; window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"]
+            } if (!window.requestAnimationFrame) { window.requestAnimationFrame = function (h, e) { var d = new Date().getTime(); var f = Math.max(0, 16 - (d - b)); var g = window.setTimeout(function () { h(d + f) }, f); b = d + f; return g } } if (!window.cancelAnimationFrame) { window.cancelAnimationFrame = function (d) { clearTimeout(d) } }
+        }());
+
+        /*
+         * Point class
+         */
+        var Point = (function () {
+            function Point(x, y) {
+                this.x = (typeof x !== 'undefined') ? x : 0;
+                this.y = (typeof y !== 'undefined') ? y : 0;
+            }
+            Point.prototype.clone = function () {
+                return new Point(this.x, this.y);
+            };
+            Point.prototype.length = function (length) {
+                if (typeof length == 'undefined')
+                    return Math.sqrt(this.x * this.x + this.y * this.y);
+                this.normalize();
+                this.x *= length;
+                this.y *= length;
+                return this;
+            };
+            Point.prototype.normalize = function () {
+                var length = this.length();
+                this.x /= length;
+                this.y /= length;
+                return this;
+            };
+            return Point;
+        })();
+
+        /*
+         * Particle class
+         */
+        var Particle = (function () {
+            function Particle() {
+                this.position = new Point();
+                this.velocity = new Point();
+                this.acceleration = new Point();
+                this.age = 0;
+            }
+            Particle.prototype.initialize = function (x, y, dx, dy) {
+                this.position.x = x;
+                this.position.y = y;
+                this.velocity.x = dx;
+                this.velocity.y = dy;
+                this.acceleration.x = dx * settings.particles.effect;
+                this.acceleration.y = dy * settings.particles.effect;
+                this.age = 0;
+            };
+            Particle.prototype.update = function (deltaTime) {
+                this.position.x += this.velocity.x * deltaTime;
+                this.position.y += this.velocity.y * deltaTime;
+                this.velocity.x += this.acceleration.x * deltaTime;
+                this.velocity.y += this.acceleration.y * deltaTime;
+                this.age += deltaTime;
+            };
+            Particle.prototype.draw = function (context, image) {
+                function ease(t) {
+                    return (--t) * t * t + 1;
+                }
+                var size = image.width * ease(this.age / settings.particles.duration);
+                context.globalAlpha = 1 - this.age / settings.particles.duration;
+                context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+            };
+            return Particle;
+        })();
+
+        /*
+         * ParticlePool class
+         */
+        var ParticlePool = (function () {
+            var particles,
+                firstActive = 0,
+                firstFree = 0,
+                duration = settings.particles.duration;
+
+            function ParticlePool(length) {
+                // create and populate particle pool
+                particles = new Array(length);
+                for (var i = 0; i < particles.length; i++)
+                    particles[i] = new Particle();
+            }
+            ParticlePool.prototype.add = function (x, y, dx, dy) {
+                particles[firstFree].initialize(x, y, dx, dy);
+
+                // handle circular queue
+                firstFree++;
+                if (firstFree == particles.length) firstFree = 0;
+                if (firstActive == firstFree) firstActive++;
+                if (firstActive == particles.length) firstActive = 0;
+            };
+            ParticlePool.prototype.update = function (deltaTime) {
+                var i;
+
+                // update active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].update(deltaTime);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+
+                // remove inactive particles
+                while (particles[firstActive].age >= duration && firstActive != firstFree) {
+                    firstActive++;
+                    if (firstActive == particles.length) firstActive = 0;
+                }
+
+
+            };
+            ParticlePool.prototype.draw = function (context, image) {
+                // draw active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].draw(context, image);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+            };
+            return ParticlePool;
+        })();
+
+        /*
+         * Putting it all together
+         */
+        (function (canvas) {
+            var context = canvas.getContext('2d'),
+                particles = new ParticlePool(settings.particles.length),
+                particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+                time;
+
+            // get point on heart with -PI <= t <= PI
+            function pointOnHeart(t) {
+                return new Point(
+                    160 * Math.pow(Math.sin(t), 3),
+                    130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+                );
+            }
+
+            // creating the particle image using a dummy canvas
+            var image = (function () {
+                var canvas = document.createElement('canvas'),
+                    context = canvas.getContext('2d');
+                canvas.width = settings.particles.size;
+                canvas.height = settings.particles.size;
+                // helper function to create the path
+                function to(t) {
+                    var point = pointOnHeart(t);
+                    point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+                    point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+                    return point;
+                }
+                // create the path
+                context.beginPath();
+                var t = -Math.PI;
+                var point = to(t);
+                context.moveTo(point.x, point.y);
+                while (t < Math.PI) {
+                    t += 0.01; // baby steps!
+                    point = to(t);
+                    context.lineTo(point.x, point.y);
+                }
+                context.closePath();
+                // create the fill
+                context.fillStyle = getRandomColor();
+                context.fill();
+                // create the image
+                var image = new Image();
+                image.src = canvas.toDataURL();
+                return image;
+            })();
+
+            // render that thing!
+            function render() {
+                // next animation frame
+                requestAnimationFrame(render);
+
+                // update time
+                var newTime = new Date().getTime() / 1000,
+                    deltaTime = newTime - (time || newTime);
+                time = newTime;
+
+                // clear canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                // create new particles
+                var amount = particleRate * deltaTime;
+                for (var i = 0; i < amount; i++) {
+                    var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+                    var dir = pos.clone().length(settings.particles.velocity);
+                    particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+                }
+
+                // update and draw particles
+                particles.update(deltaTime);
+                particles.draw(context, image);
+            }
+
+            // handle (re-)sizing of the canvas
+            function onResize() {
+                canvas.width = canvas.clientWidth;
+                canvas.height = canvas.clientHeight;
+            }
+            window.onresize = onResize;
+
+			// start display
+			setTimeout(function () {
+                onResize();
+                render();
+            }, 800);
+        })(document.getElementById('pinkboard'));
     </script>
-</body>
-</html>
+<script type="text/javascript">
+	$( "#header-plugin" ).load( "https://vivinantony.github.io/header-plugin/", function() {
+		$("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")  
+	});
+
+	var love = setInterval(function() {
+		var r_num = Math.floor(Math.random() * 40) + 1;
+		var r_size = Math.floor(Math.random() * 65) + 10;
+		var r_left = Math.floor(Math.random() * 100) + 1;
+		var r_bg = Math.floor(Math.random() * 25) + 100;
+		var r_time = Math.floor(Math.random() * 5) + 5;
+
+		$('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+
+		$('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+
+		$('.heart').each(function() {
+			var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+			var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+			if (top <= -100 || width >= 150) {
+				$(this).detach();
+			}
+		});
+	}, 500);
+	</script>
+</body></html>
